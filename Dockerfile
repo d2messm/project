@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM anapsix/alpine-java 
+LABEL maintainer="d2messm@gmail.com"
+COPY /target/project.jar /home/project.jar 
+CMD ["java","-jar","/home/project.jar"]
